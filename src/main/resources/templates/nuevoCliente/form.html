@@ -42,22 +42,27 @@
         <input type="hidden" th:field="*{idCliente}">
         <div class="mb-3">
             <label th:utext="'Nombre: '" for="nombreCliente"></label>
-            <input type="text" th:field="*{nombre}" id="nombreCliente" required class="form-control">
+            <input type="text" th:field="*{nombre}" id="nombreCliente"  class="form-control">
+            <small class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></small>
         </div>
         <div class="mb-3">
             <label th:utext="'Apellidos: '" for="apellidoCliente"></label>
-            <input type="text" th:field="*{apellidos}" id="apellidoCliente" required class="form-control">
+            <input type="text" th:field="*{apellidos}" id="apellidoCliente"  class="form-control">
+            <small class="form-text text-danger" th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></small>
         </div>
         <div class="mb-3">
             <label th:utext="'Correo: '" for="correoCliente"></label>
-            <input type="email" th:field="*{correo}" id="correoCliente" required class="form-control">
+            <input type="email" th:field="*{correo}" id="correoCliente"  class="form-control">
+            <small class="form-text text-danger" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}"></small>
         </div>
 
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Fecha</label>
             <div class="col-sm-6">
-                <input type="date" class="form-control" th:field="*{fechaRegistro}" required>
+                <input type="date" class="form-control" th:field="*{fechaRegistro}" >
+                <small class="form-text text-danger" th:if="${#fields.hasErrors('fechaRegistro')}" th:errors="*{fechaRegistro}"></small>
             </div>
+
         </div>
 
         <div class="mb-3">
